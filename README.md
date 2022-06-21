@@ -14,9 +14,9 @@ Create, design and implement a web-based application capable of running SQL quer
 
 The app offer a react UI-UX experience coupled with a bunch of cool and exiting features to that comes in handy and make the entire process of writing and implementing SQL queries seamless, easy, interactive and handy. Some of the MSP's are mentioned below.
 
-- [Multiple Text Editor][useselect-readme] for a wide range of users, starting from absolute beginnner to advanced.
-- [Table Options][combobox-readme] for sorting, editing and pagination of rows to better understand the data.
-- [Multiple Themes][multiple-selection-readme] for rich and worthy user experience
+- [Multiple Text Editor](#multiple-editors) for a wide range of users, starting from absolute beginnner to advanced.
+- [Table Options](#table-options) for sorting, editing and pagination of rows to better understand the data.
+- [Multiple Themes](#theming) for rich and worthy user experience
 
 
 ### SQLized
@@ -47,8 +47,6 @@ This is a app that takes in SQL queries fro the user and executes the commands a
 - [Speed](#speed)
 - [Optimizations](#optimizations)
 - [Future Scope](#future-scope)
-- [FAQ](#faq)
-- [Inspiration](#inspiration)
 - [Contributors](#contributors)
 - [LICENSE](#license)
 
@@ -80,11 +78,11 @@ Below is a Gif demonstracting the app and it's various features that are availab
 
 Below I've provided all of the features for the app and also mentioned their limitations
 
-### Multiple Editor
+### Multiple Editors
 
 So, the choice of using muliple text editor is based on the fact that there is a lot of diversity in the data Science field, there are people ranging from beginners to advanced level. So, in order the curate this wide variety of user base, there are mainly 4 different text editor for the user to enter their queries.
 
-#### [Code Mirror Editor][code-mirror-editor]
+#### [Code Mirror Editor][code-mirror]
 
 Aimed for the more intermediate and advanced users who are comfortable writing code, have worked on IntellSense based Text editors and want to use use shortcuts to perform actins more quickly and efficiently.
 
@@ -92,7 +90,7 @@ Below is a screenshot of the editor.
 
 <img src="./Screenshots/static/code-mirror.png" />
 
-#### [Auto Complete Editor][react-auto-complete]
+#### [Auto Complete Editor][react-autocorrect-input]
 
 This is a simple text based input field for those users that don't want a full fledged code editor but still wants the feature of auto complete in the input field.
 
@@ -108,7 +106,7 @@ Below is a screenshot of the editor.
 
 <img src="./Screenshots/static/guided-editor.png"/>
 
-#### [VS Code (Monaco) Editor][monaco-editor ]
+#### [VS Code (Monaco) Editor][monaco-editor]
 
 One of the most popular and most used text-editor out there. For a lot of folks into this industry they have been using VS Code for a long time and are used to working on it. Most users would prefer this based on their prior experience with VS Code.
 
@@ -129,9 +127,9 @@ Below is a screenshot of the editor.
 
 In order to better understand the data stored in form of tables, there are a few optinos provided to the user in terms of Tables. These are
 
-- [Pagination]
-- [Edit Tables Cells]
-- [Sorting Records based on a Column]
+- [Pagination][pagination]
+- [Edit Tables Cells][edit-table-cells]
+- [Sorting Records based on a Column][sorting]
 
 ### Voice Recognition
 
@@ -141,25 +139,25 @@ This is still in testing and limited to a few queries for now. This is based on 
 
 This is by far one of the most basic and useful feature that is missing in most of the basic apps out there. Options that have been implemented includes:
 
-- [Copy]
-- [Paste]
-- [Clear]
-- [Upload]
-- [Download]
-- [Execute]
+- Copy
+- Paste
+- Clear
+- Upload
+- Download
+- Execute
 
 ### Theming
 
 Themes help to enhance the overall UI-UX of an app and make it more attractive and hence bringing more user base to try out the app.
 
-- [Light]
-    - [Light]
-    - [Bee]
-- [Dark]
-    - [Dawn]
-    - [Midnight]
-    - [Cool]
-    - [pale]
+- [Light][vechai-theme]
+    - [Light][vechai-theme]
+    - [Bee][vechai-theme]
+- [Dark][vechai-theme]
+    - [Dawn][vechai-theme]
+    - [Midnight][vechai-theme]
+    - [Cool][vechai-theme]
+    - [pale][vechai-theme]
 
 Below is a dropdown for choosing the desired theme.
 
@@ -195,7 +193,7 @@ Used for taking input from the users familiar with VS Code. Color Formatting Pro
 
 Used for the purpose of providing beautiful UI components and Icons.
 
-### [React Maker][react-autocorrret-input] - `1.0.2`
+### [React Maker][react-autocorrect-input] - `1.0.2`
 
 Used for provideding input field that has custom auto complete dropdown. 
 
@@ -207,7 +205,7 @@ Used for designing and making the UI more appealing.
 
 Used for most part of the app to provided customized theming and lot of UI components.
 
-### [AG Grid Commpunity][ag-grid-community] - `27.3.0`
+### [AG Grid Community][ag-grid-community] - `27.3.0`
 
 Used for displaying the tables, sorting them, editing and adding pagination.
 
@@ -215,11 +213,11 @@ Used for displaying the tables, sorting them, editing and adding pagination.
 
 Used for parsing the excel and csv files uploaded by the users and extract information need.
 
-### [React Icons][react-Icons] - `4.4.0`
+### [React Icons][react-icons] - `4.4.0`
 
 Used for the purpose of providing beautiful UI components and Icons.
 
-## [Speed]
+## Speed
 
 Page Load time is coming somewhat around decent as compared to other such similar react app apps with similar functionality. Used a couple of speed testing websites to check the matrix whose Screenshots have been provided below.
 
@@ -229,7 +227,7 @@ Give the fact that the app has [Alan AI Voice Recognition][alan-ai] and [AG Grid
 
 <img src="./Screenshots/static/speed2.png">
 
-## [Optimizations Done]
+## Optimizations Done
 
 Used useMemo and useCallback hooks for memorization puropse in a lot of places. Moreover, choose Vite over webpack also grave a much needed boost to the final speed of the app. Using gobal variables only when necessary. Will be doing more optimizations like re-reselect, lazy Loading plus using cache memory proficiently.
 
@@ -267,73 +265,25 @@ Contributions of any kind welcome!
 
 MIT
 
-[react-badge]:
-  https://img.shields.io/badge/%E2%9A%9B%EF%B8%8F-(p)react-00d8ff.svg?style=flat-square
-[react]: https://facebook.github.io/react/
-[gzip-badge]:
-  http://img.badgesize.io/https://unpkg.com/downshift/dist/downshift.umd.min.js?compression=gzip&label=gzip%20size&style=flat-square
-[size-badge]:
-  http://img.badgesize.io/https://unpkg.com/downshift/dist/downshift.umd.min.js?label=size&style=flat-square
-[unpkg-dist]: https://unpkg.com/downshift/dist/
-[module-formats-badge]:
-  https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20es-green.svg?style=flat-square
-[spectrum-badge]: https://withspectrum.github.io/badge/badge.svg
-[spectrum]: https://spectrum.chat/downshift
-[emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
-[all-contributors]: https://github.com/kentcdodds/all-contributors
-[ryan]: https://github.com/ryanflorence
-[compound-components-lecture]:
-  https://courses.reacttraining.com/courses/advanced-react/lectures/3060560
-[react-autocomplete]: https://www.npmjs.com/package/react-autocomplete
-[jquery-complete]: https://jqueryui.com/autocomplete/
-[examples]:
-  https://codesandbox.io/search?refinementList%5Btags%5D%5B0%5D=downshift%3Aexample&page=1
-[yt-playlist]:
-  https://www.youtube.com/playlist?list=PLV5CVI1eNcJh5CTgArGVwANebCrAh2OUE
-[jared]: https://github.com/jaredly
-[controlled-components-lecture]:
-  https://courses.reacttraining.com/courses/advanced-react/lectures/3172720
-[react-training]: https://reacttraining.com/
-[advanced-react]: https://courses.reacttraining.com/courses/enrolled/200086
-[use-a-render-prop]:
-  https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce
-[semver]: http://semver.org/
-[hooks-readme]: https://github.com/downshift-js/downshift/blob/master/src/hooks
-[useselect-readme]:
-  https://github.com/downshift-js/downshift/blob/master/src/hooks/useSelect
-[combobox-readme]:
-  https://github.com/downshift-js/downshift/tree/master/src/hooks/useCombobox
-[multiple-selection-readme]:
-  https://github.com/downshift-js/downshift/tree/master/src/hooks/useMultipleSelection
-[bundle-phobia-link]: https://bundlephobia.com/result?p=downshift@3.4.8
-[aria]:
-  https://www.w3.org/TR/wai-aria-practices/
-[combobox-aria]:
-  https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html
-[select-aria]:
-  https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html
-[docsite]: https://downshift-js.com/
-[code-sandbox-try-it-out]:
-  https://codesandbox.io/s/github/kentcdodds/downshift-examples?file=/src/downshift/ordered-examples/00-get-root-props-example.js
-[code-sandbox-no-get-root-props]:
-  https://codesandbox.io/s/github/kentcdodds/downshift-examples?file=/src/downshift/ordered-examples/01-basic-autocomplete.js
-
-[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square[coc]: https://github.com/downshift-js/downshift/blob/master/CODE_OF_CONDUCT.md
-
+[create-react-app]: https://reactjs.org/docs/create-a-new-react-app.html
+[webpack]: https://webpack.js.org/
+[yarn]: https://yarnpkg.com/
+[vite]: https://vitejs.dev/
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
-[build-badge]: https://img.shields.io/github/workflow/status/downshift-js/downshift/validate?logo=github&style=flat-square
-[build]: https://github.com/downshift-js/downshift/actions?query=workflow%3Avalidate+branch%3Amaster
-[coverage-badge]: https://img.shields.io/codecov/c/github/downshift-js/downshift.svg?style=flat-square
-[coverage]: https://codecov.io/github/downshift-js/downshift
-[version-badge]: https://img.shields.io/npm/v/downshift.svg?style=flat-square
-[package]: https://www.npmjs.com/package/downshift
-[downloads-badge]: https://img.shields.io/npm/dm/downshift.svg?style=flat-square
-[npmcharts]: http://npmcharts.com/compare/downshift
-[license-badge]: https://img.shields.io/npm/l/downshift.svg?style=flat-square
-[license]: https://github.com/downshift-js/downshift/blob/master/LICENSE
-[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
-[prs]: http://makeapullrequest.com
-[chat]: https://gitter.im/downshift-js/downshift
-[chat-badge]: https://img.shields.io/gitter/room/downshift-js/downshift.svg?style=flat-square
+[alan-ai]: https://alan.app/platform
+[monaco-editor]: https://www.npmjs.com/package/@monaco-editor/react
+[code-mirror]: https://www.npmjs.com/package/react-codemirror
+[headless-ui]: https://headlessui.dev/
+[hero-icons]: https://www.npmjs.com/package/@heroicons/react
 [deployment-link]: https://sqlized.vercel.app/
+[react-autocorrect-input]: https://www.npmjs.com/package/@webscopeio/react-textarea-autocomplete
+[tailwind]: https://tailwindcss.com/docs/guides/create-react-app
+[vechai-ui]: https://www.vechaiui.com/
+[ag-grid-community]: https://www.ag-grid.com/react-data-grid/reactui/
+[papa-parse]: https://www.npmjs.com/package/react-papaparse
+[react-icons]: https://www.npmjs.com/package/react-icons
+[pagination]: https://www.ag-grid.com/react-data-grid/server-side-model-pagination/
+[edit-table-cells]: https://www.ag-grid.com/react-data-grid/cell-editing/
+[sorting]: https://www.ag-grid.com/react-data-grid/row-sorting/
+[vechai-theme]: https://www.vechaiui.com/themes-gallery
