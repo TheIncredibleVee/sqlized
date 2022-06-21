@@ -168,6 +168,10 @@ Themes help to enhance the overall UI-UX of an app and make it more attractive a
     - [Cool]
     - [pale]
 
+Below is a dropdown for choosing the desired theme.
+
+<img src="./Screenshots/static/theme.png">
+
 ## Tech Stack
 
 This app is primarily based on [React][create-react-app] while build with [Vite][vite] instead of the default [Webpack][webpack] out there, as Vite is better in terms of speed and performance. Also, instead of using typical npm, have used yarn while making the app. Not toh mention that for managing state have used Context API as the project size was small. Later on adding complexity might call a need for Redux.

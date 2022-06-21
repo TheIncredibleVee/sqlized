@@ -2,6 +2,7 @@ import React,{useState, useEffect} from "react";
 import {Button, Icon} from '@vechaiui/react';
 import {MdOutlineMenu} from 'react-icons/md';
 import {useStateContext} from '../../context';
+import logo from '../../assets/logo.png';
 const SideBar = () => {
     const {sidebar, setSidebar, setSettings, setHistoryPane} = useStateContext();
     const handleSettingsClick =(e)=>{
@@ -16,9 +17,9 @@ const SideBar = () => {
         <>
         <div className={`flex flex-no-wrap w-full h-full ${!sidebar? 'hidden':' '}`}>
             <div className="shadow flex-col justify-between sm:flex w-full">
-                <div className="px-8">
+                <div className="px-6">
                     <div className="h-16 flex items-center border-b pb-2">
-                       <img className="h-2/3 mt-4 -ml-2" src="https://wfiot2018.iot.ieee.org/files/2016/01/sample-logo@2x.png" alt= "logo"/>
+                       <img className="h-2/3 mt-4 " src={logo} alt= "logo"/>
                        <div className="flex-1 text-right">
                         <Icon onClick={(e)=>setSidebar(!sidebar)} as={MdOutlineMenu} label="info" className="w-6 h-6" />
                        </div>
