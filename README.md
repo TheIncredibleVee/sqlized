@@ -239,12 +239,12 @@ In addition to improving the alreay implemented features, am also looking forwar
 
 ## [Contributors](#contributors)
 
-[TheIncredibleVee]
+[TheIncredibleVee][theincrediblevee]
 
 
 ## Contributors
 
-Thanks goes to these people ([emoji key][emojis]):
+Thanks goes to these people:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 
@@ -254,12 +254,11 @@ Thanks goes to these people ([emoji key][emojis]):
 
 <table>
   <tr>
-    <td align="center"><a href="https://www.github.com/theincrediblevee"><img src="https://avatars.githubusercontent.com/u/39600438?v=4" width="100px;" alt=""/><br /><sub><b>TheIncredibleVee</b></sub></a><br /><a href="https://github.com/sqlized/commits?author=theincrediblevee" title="Code">💻</a> <a href="" title="Documentation">📖</a> <a href="" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="" title="Tests">⚠️</a> <a href="" title="Reviewed Pull Requests">👀</a> <a href="#blog-kentcdodds" title="Blogposts">📝</a> <a href="" title="Bug reports">🐛</a> <a href="#example-kentcdodds" title="Examples">💡</a> <a href="" title="Ideas, Planning, & Feedback">🤔</a> <a href="s" title="Talks">📢</a></td>
+    <td align="center"><a href="https://www.github.com/theincrediblevee"><img src="https://avatars.githubusercontent.com/u/39600438?v=4" width="100px;" alt=""/><br /><sub><b>TheIncredibleVee</b></sub></a><br /><a href="https://github.com/sqlized/commits?author=theincrediblevee" title="Code">💻</a> <a href="" title="Reviewed Pull Requests">👀</a><a href="#example-kentcdodds" title="Examples">💡</a> </td>
 </tr>
 </table>
 
-This project follows the [all-contributors][all-contributors] specification.
-Contributions of any kind welcome!
+Contributions of any kind are welcome!
 
 ## LICENSE
 
@@ -287,3 +286,4 @@ MIT
 [edit-table-cells]: https://www.ag-grid.com/react-data-grid/cell-editing/
 [sorting]: https://www.ag-grid.com/react-data-grid/row-sorting/
 [vechai-theme]: https://www.vechaiui.com/themes-gallery
+[theincrediblevee]: https://www.github.com/theincrediblevee
