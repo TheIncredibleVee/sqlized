@@ -14,19 +14,9 @@ import ListOptions from './ListOptions';
 
 const GuidedEditor = () => {
 
-    const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false)
-    const handleToggleShowPassword = () => setShowPassword(!showPassword)
     const [selectedCommand, setSelectedCommand] = useState(commands[0]);
 
-    const { register, handleSubmit } = useForm();
-    const onSubmit = async (data) => {
-      setLoading(true);
-      setTimeout(() => {
-        alert(JSON.stringify(data));
-        setLoading(false);
-      }, 500);
-    };
     // useEffect(()=>{
     //     
     //     
@@ -38,7 +28,7 @@ const GuidedEditor = () => {
                 <FormLabel className="ml-6 mt-2">Select the type of query</FormLabel>
                 <ListOptions selectedCommand={selectedCommand} setSelectedCommand={setSelectedCommand} />
             </div>
-        <form {...register("gender")} onSubmit={handleSubmit(onSubmit)} className=" flex flex-row min-w-full space-x-4">
+        <form  className=" flex flex-row min-w-full space-x-4">
            {mapping[selectedCommand].fields.map((field, idx)=>{
                 return field.type !== "text" ? (
                     <Input className="flex-1" placeholder={field.value} />

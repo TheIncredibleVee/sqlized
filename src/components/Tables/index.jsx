@@ -12,7 +12,7 @@ import {useStateContext} from '../../context'
 
 
 const Tables = () => {
-    const {table, pagination, sorting, editTables} = useStateContext();
+    const {table, pagination, sorting, editTables, currentMode} = useStateContext();
     let table1pos = table;
     let table2pos = table + 1;
     const columnDefsUpperTable = useMemo(() => headers[table1pos], [table]);
@@ -54,7 +54,7 @@ const Tables = () => {
             
             <AgGridReact
             ref={grid1Ref}
-            className="ag-theme-balham-dark"
+            className={`${currentMode === 'dark' ? 'ag-theme-alpine-dark': "ag-theme-alpine"}`}
             animateRows="true"
             columnDefs={columnDefsUpperTable}
             defaultColDef={defaultColDef}
@@ -66,7 +66,7 @@ const Tables = () => {
 
                 <AgGridReact
                 ref={grid2Ref}
-                className="ag-theme-alpine-dark"
+                className={`${currentMode === 'dark' ? 'ag-theme-alpine-dark': "ag-theme-alpine"}`}
                 animateRows="true"
                 columnDefs={columnDefsLowerTable}
                 defaultColDef={defaultColDef}

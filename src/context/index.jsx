@@ -58,21 +58,21 @@ export const ContextProvider = ({ children }) => {
     e.preventDefault();
     localStorage.setItem('table', table);
   }
-  const setMode = () => {
-    localStorage.setItem('themeMode', currentMode);
+  const setMode = (mode) => {
+    localStorage.setItem('themeMode', mode);
   };
     const saveInputVal = () => {
         localStorage.setItem('inputVal', inputVal);
     }
 
   const saveTheme = () => {
-    // setTheme(theme);
     if(darkThemes.indexOf(theme) > -1){
       setCurrentMode('dark'); 
+      setMode('dark');
     }else{
       setCurrentMode('light');
+      setMode('light');
     }
-    setMode();
     localStorage.setItem('theme', theme);
   };
 

@@ -8,10 +8,9 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css';
 
-
 const Output = () => {
     const gridRef = useRef();
-    const {output} = useStateContext();
+    const {output, currentMode} = useStateContext();
     const [rowData ,setRowData] = useState(rows[output]);
     const colData = useMemo(() => headers[output], [output]);
     const defaultColDef = useMemo(() => ({
@@ -38,7 +37,7 @@ const Output = () => {
             
             <AgGridReact
             ref ={gridRef}
-            className="ag-theme-balham-dark"
+            className={`${currentMode==='dark'? 'ag-theme-alpine-dark': 'ag-theme-alpine'}`}
             animateRows="true"
             columnDefs={colData}
             defaultColDef={defaultColDef}
