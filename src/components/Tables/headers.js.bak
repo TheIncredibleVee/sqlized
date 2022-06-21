@@ -1,0 +1,61 @@
+
+export const headers = [
+    [
+	{
+		key: "categoryID",
+        name: "Category"
+		
+	},
+	{
+        key: "description",
+        name: "Description"
+	},
+	{
+        key: "name",
+        name: "Name"
+	},
+    ],
+    [
+        {
+            key: "customerID",
+            name: "Customer",
+        },
+        {
+            key: "companyName",
+            name: "Company Name"
+        },
+        {
+		key: "contactName",
+		name: "Contact Name",
+        },
+        {
+            key: "contactTitle",
+            name: "Contact Title",
+        },
+        {
+                key: "address",
+                name: "Address",
+        },
+        {
+            key: "city",
+            name: "City",
+        },
+        {
+            key: "region",
+            name: "Region",
+        },
+        {
+            key: "postalCode",
+            name: "Postal Code",
+        },
+        {  
+            key: "country",
+            name: "Country",
+        },
+        {
+            key: "phone",
+            name: "Phone",
+        },
+
+    ]
+]
