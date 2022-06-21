@@ -70,7 +70,7 @@ yarn
 ## Usage
 
 Try out the app which is available to try using the link mentioned below:(Deployed using [Vercel][vercel] )
-> [Try it out in the browser][code-sandbox-try-it-out]
+> [Try it out in the browser][deployment-link]
 
 There is also an [example without getRootProps][code-sandbox-no-get-root-props].
 
@@ -343,3 +343,4 @@ MIT
 [prs]: http://makeapullrequest.com
 [chat]: https://gitter.im/downshift-js/downshift
 [chat-badge]: https://img.shields.io/gitter/room/downshift-js/downshift.svg?style=flat-square
+[deployment-link]: https://sqlized.vercel.app/
