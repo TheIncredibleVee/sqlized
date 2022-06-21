@@ -4,14 +4,14 @@ import { cx } from "@vechaiui/react";
 import MonacoEditor from '../MonacoEditor';
 import GuidedEditor from '../GuidedEditor';
 import AutoCompleteEditor from '../AutoCompleteEditor';
+import CodeMirrorEditor from '../CodeMirrorEditor';
 const EditorSelect = () => {
     const tabs = [
-        {
-          value: "vsCode",
-          name: "VS Code Editor",
-          content: <MonacoEditor/>,
-        //   icon: UserCircleIcon,
-        },
+      { 
+        value: "codeMirror",
+        name: "Code Mirror Editor",
+        content: <CodeMirrorEditor/>,
+      },
         {
           value: "autoComplete",
           name: "Auto Complete Editor",
@@ -23,6 +23,12 @@ const EditorSelect = () => {
           name: "Guided Editor",
           content: <GuidedEditor/>,
         //   icon: ShieldCheckIcon,
+        },
+        {
+          value: "vsCode",
+          name: "VS Code Editor",
+          content: <MonacoEditor/>,
+        //   icon: UserCircleIcon,
         },
       ];
     

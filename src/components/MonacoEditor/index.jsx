@@ -3,7 +3,7 @@ import { useStateContext } from '../../context';
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react";
 
 const MonacoEditor = () => {
-    const {inputVal, setInputVal} = useStateContext();
+    const {inputVal, setInputVal, currentMode} = useStateContext();
     function handleEditorChange(value, event) {
         
         setInputVal(value);
@@ -29,7 +29,7 @@ const MonacoEditor = () => {
         height="25vh"
         // width="50%"
         defaultLanguage="sql"
-        theme="vs-dark"
+        theme={`${currentMode === 'dark' ? 'vs-dark': "vs-light"}`}
         defaultValue={inputVal}
         onChange={handleEditorChange}
         onMount={handleEditorDidMount}

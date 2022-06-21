@@ -27,7 +27,7 @@ const Tables = () => {
     
     useEffect(() => {
         setTimeout(() => autoSizeAll(false), 1000);
-    }, []);
+    }, [table]);
     const autoSizeAll = useCallback((skipHeader) => {
         const allColumnIds = [];
         grid2Ref?.current?.columnApi.getAllColumns().forEach((column) => {

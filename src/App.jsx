@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
+import alanBtn from '@alan-ai/alan-sdk-web';
 import { VechaiProvider, extendTheme, Button } from "@vechaiui/react";
 import {bee, midnight, pale, dawn, cool} from "./themes";
 import { ToolBox, Sidebar, Navbar, TableWrapper, Output, EditorSelect, Setting, HistoryPanel} from './components';
@@ -19,7 +20,19 @@ const themeSet = extendTheme({
 
 function App() {
 
-  const {sidebar, theme} =useStateContext();
+  const {sidebar, theme, inputVal, setInputVal} =useStateContext();
+
+  useEffect(() => {
+    alanBtn({
+        key: '07e5cc68da04038ae7ee483d2ed6a4d02e956eca572e1d8b807a3e2338fdd0dc/stage',
+        onCommand: (commandData) => {
+          console.log(commandData.command === 'SELECT');
+          if (commandData?.command === 'SELECT') {
+            setInputVal(`SELECT ${commandData.COL} FROM ${commandData.TABLE};`);
+          }
+        }
+    });
+  }, []);
   return (
     
     <VechaiProvider theme={themeSet} colorScheme={theme}>
