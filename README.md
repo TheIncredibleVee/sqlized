@@ -5,11 +5,6 @@
 </h1>
 <p align="center" style="font-size: 1.2rem;">Easy to use, flexible, and user-friendly SQL running app with voice command support</p>
 <hr />
-[Demo]
-[Build Status][build]
-[Code Coverage][coverage]
-[downloads][npmcharts] [version][package]
-[MIT License][license]
 
 ## The problem (Outline)
 
@@ -71,8 +66,6 @@ yarn
 
 Try out the app which is available to try using the link mentioned below:(Deployed using [Vercel][vercel] )
 > [Try it out in the browser][deployment-link]
-
-There is also an [example without getRootProps][code-sandbox-no-get-root-props].
 
 > Warning: For best User Experience, visit the website on `Desktop`.
 
@@ -170,7 +163,7 @@ Themes help to enhance the overall UI-UX of an app and make it more attractive a
 
 Below is a dropdown for choosing the desired theme.
 
-<img src="./Screenshots/static/theme.png">
+<img src="./Screenshots/static/themes.png">
 
 ## Tech Stack
 
@@ -232,7 +225,7 @@ Page Load time is coming somewhat around decent as compared to other such simila
 
 Give the fact that the app has [Alan AI Voice Recognition][alan-ai] and [AG Grid Commpunity][ag-grid-community] that have their own complexities, the speed of the website comes out to be really good.
 
-<img src="./Screenshots/static/speed1/png">
+<img src="./Screenshots/static/speed1.png">
 
 <img src="./Screenshots/static/speed2.png">
 
