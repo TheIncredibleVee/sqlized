@@ -428,7 +428,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.5.tgz#2c40f81449a4e554e9fc6396910ed4843ec2be50"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
 
-"@emotion/react@^11.5.0":
+"@emotion/react@^11.4.1", "@emotion/react@^11.5.0":
   version "11.9.3"
   resolved "https://registry.yarnpkg.com/@emotion/react/-/react-11.9.3.tgz#f4f4f34444f6654a2e550f5dab4f2d360c101df9"
   integrity sha512-g9Q1GcTOlzOEjqwuLF/Zd9LC+4FljjPjDfxSM7KmEakm+hsHXk+bYZ2q+/hTJzr0OUNkujo72pXLQvXj6H+GJQ==
@@ -1905,6 +1905,13 @@ react-refresh@^0.13.0:
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.13.0.tgz#cbd01a4482a177a5da8d44c9755ebb1f26d5a1c1"
   integrity sha512-XP8A9BT0CpRBD+NYLLeIhld/RqG9+gktUjW1FkE+Vm7OCinbG1SshcK5tb9ls4kzvjZr9mOQc7HYgBngEyPAXg==
+
+react-spinners@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/react-spinners/-/react-spinners-0.12.0.tgz#082b3e247878c7dc4f89ba7f23d6994aa2269075"
+  integrity sha512-kC/3g4Dk3kBaVfYVu7f+Zxd9wTxt6Lzws5cP3jCuE03TZwTNtwS++ZGUNF8BR3M8UrUFXP0gil0L9LONOsUkjw==
+  dependencies:
+    "@emotion/react" "^11.4.1"
 
 react-spring@^9.2.3:
   version "9.4.5"
