@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useCallback} from 'react'
 import { Dialog, Transition, Listbox } from "@headlessui/react";
 import { cx, Button, XIcon, SelectorIcon, Icon, Switch } from "@vechaiui/react";
 import {useStateContext} from '../../context';
@@ -14,10 +14,10 @@ const themes = [
 const Setting = () => {
   const completeButtonRef = React.useRef(null);
   const {settings, setSettings, theme, saveTheme, setTheme, pagination, sorting, editTables, setPagination, setEditTables, setSorting} = useStateContext(); 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     saveTheme();
     setSettings(false);
-  }
+  },[]);
 
   return (
     <div className="p-8">
@@ -196,4 +196,4 @@ const Setting = () => {
   );
 }
 
-export default Setting
+export default React.memo(Setting);

@@ -11,4 +11,4 @@ const AutoCompleteEditor = () => {
     )
 }
 
-export default AutoCompleteEditor
+export default React.memo(AutoCompleteEditor);

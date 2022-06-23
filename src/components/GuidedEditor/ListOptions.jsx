@@ -108,4 +108,4 @@ const ListOptions = ({selectedCommand, setSelectedCommand}) => {
   )
 }
 
-export default ListOptions
+export default React.memo(ListOptions);

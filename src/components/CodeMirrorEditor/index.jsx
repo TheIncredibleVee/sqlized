@@ -1,7 +1,8 @@
 import CodeMirror from "@uiw/react-codemirror";
 import { sql } from "@codemirror/lang-sql";
 import {useStateContext} from '../../context';
-export default function CodeMirrorEditor() {
+import React from 'react';
+ const CodeMirrorEditor = ()=> {
   const {inputVal, setInputVal, currentMode} = useStateContext();
   return (
     <CodeMirror
@@ -13,3 +14,4 @@ export default function CodeMirrorEditor() {
     />
   );
 }
+export default React.memo(CodeMirrorEditor);

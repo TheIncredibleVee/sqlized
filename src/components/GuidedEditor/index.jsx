@@ -1,11 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import { useForm } from "react-hook-form";
+import React, {useState} from 'react';
 import {
-    FormControl,
     FormLabel,
-    FormHelperText,
-    FormErrorMessage,
-    Select,
     Input,
     Button,
   } from "@vechaiui/react"
@@ -14,13 +9,7 @@ import ListOptions from './ListOptions';
 
 const GuidedEditor = () => {
 
-    const [showPassword, setShowPassword] = useState(false)
     const [selectedCommand, setSelectedCommand] = useState(commands[0]);
-
-    // useEffect(()=>{
-    //     
-    //     
-    // },[selectedCommand]);
 
     return (
         <div className="w-full p-8 space-x-4">
@@ -41,4 +30,4 @@ const GuidedEditor = () => {
     )
 }
 
-export default GuidedEditor
+export default React.memo(GuidedEditor);

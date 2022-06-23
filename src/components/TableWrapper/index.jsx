@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useCallback} from 'react'
 import { Dialog, Transition, Listbox,   } from "@headlessui/react";
 import { cx, Button, FormLabel,  FormControl, Divider, XIcon, Icon, SelectorIcon, Switch } from "@vechaiui/react";
 import {useStateContext} from '../../context'
@@ -37,13 +37,13 @@ const TableWrapper = () => {
     const [showDialog, setShowDialog] = useState(false);
   const inputRef = React.useRef(null);
   const [selectedTable, setSelectedTable] = useState(tables[table]);
-    const handleSelect =()=>{
+    const handleSelect =useCallback(()=>{
         setTable(tablesMapping[selectedTable]);
         setShowDialog(false);
         setSelectedTable(tables[table]);
-    }
-  const handleOpen = () => setShowDialog(true);
-  const handleClose = () => setShowDialog(false);
+    },[table, selectedTable]);
+  const handleOpen = useCallback(() => setShowDialog(true),[]);
+  const handleClose = useCallback(() => setShowDialog(false), []);
 
   return (
     <>
@@ -242,4 +242,4 @@ const TableWrapper = () => {
   )
 }
 
-export default TableWrapper
+export default React.memo(TableWrapper);

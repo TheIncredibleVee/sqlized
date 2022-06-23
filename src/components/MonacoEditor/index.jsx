@@ -1,28 +1,12 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import { useStateContext } from '../../context';
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react";
 
 const MonacoEditor = () => {
     const {inputVal, setInputVal, currentMode} = useStateContext();
-    function handleEditorChange(value, event) {
-        
-        setInputVal(value);
-        
-      }
-    
-      function handleEditorDidMount(editor, monaco) {
-        
-        
-      }
-    
-      function handleEditorWillMount(monaco) {
-        
-      }
-    
-      function handleEditorValidation(markers) {
-        // model markers
-        // markers.forEach(marker => 
-      }
+     const handleEditorChange = useCallback((value, event) => {
+      setInputVal(value);
+     },[]);
   return (
     <div className="w-full">
         <Editor
@@ -32,12 +16,9 @@ const MonacoEditor = () => {
         theme={`${currentMode === 'dark' ? 'vs-dark': "vs-light"}`}
         defaultValue={inputVal}
         onChange={handleEditorChange}
-        onMount={handleEditorDidMount}
-        beforeMount={handleEditorWillMount}
-        onValidate={handleEditorValidation}
         />
     </div>
   )
 }
 
-export default MonacoEditor
+export default React.memo(MonacoEditor);

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useMemo, useCallback} from 'react'
 import { Tab } from "@headlessui/react";
 import { cx } from "@vechaiui/react";
 import MonacoEditor from '../MonacoEditor';
@@ -6,7 +6,7 @@ import GuidedEditor from '../GuidedEditor';
 import AutoCompleteEditor from '../AutoCompleteEditor';
 import CodeMirrorEditor from '../CodeMirrorEditor';
 const EditorSelect = () => {
-    const tabs = [
+    const tabs = useMemo(() => [
       { 
         value: "codeMirror",
         name: "Code Mirror Editor",
@@ -30,7 +30,7 @@ const EditorSelect = () => {
           content: <MonacoEditor/>,
         //   icon: UserCircleIcon,
         },
-      ];
+      ], []);
     
       return (
         <div className="flex flex-wrap w-full p-8 space-x-4">
@@ -77,4 +77,4 @@ const EditorSelect = () => {
       )
 }
 
-export default EditorSelect; 
+export default React.memo(EditorSelect); 

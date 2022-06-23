@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useCallback} from 'react'
 import { Button, IconButton, Icon, cx, XIcon, FormControl, Divider, FormLabel,Input } from "@vechaiui/react"
 import {useStateContext} from "../../context";
 import {MdOutlineContentCopy, MdOutlineContentPaste, MdOutlineClear, MdOutlineFileDownload, MdOutlineSave, MdOutlineUploadFile,MdOutlinePlayCircleOutline} from 'react-icons/md'
@@ -7,24 +7,24 @@ const TopBar = ({copy=true, paste= true, clear = true, download = true, save = t
     const [showDialog, setShowDialog] = React.useState(false);
     const inputRef = React.useRef(null);
 
-    const handleOpen = () => setShowDialog(true);
-    const handleClose = () => setShowDialog(false);
+    const handleOpen = useCallback(() => setShowDialog(true), []);
+    const handleClose = useCallback(() => setShowDialog(false),[]);
 
     const {inputVal, setInputVal, saveInputVal, handleExecuteButton, history} = useStateContext();
-    const onCopy = () => {
+    const onCopy = useCallback(() => {
         navigator.clipboard.writeText(inputVal);
-    }
-    const onPaste = () => {
+    }, [inputVal]);
+    const onPaste = useCallback(() => {
         navigator.clipboard.readText().then(text => setInputVal(text));
-    }
-    const onClear= () => {
+    },[])
+    const onClear= useCallback(() => {
         setInputVal("");
-    }
-    const onSave = () => {
+    },[]);
+    const onSave = useCallback(() => {
         saveInputVal();
-    }
+    },[]);
 
-    const onDownaload = () => {
+    const onDownload = () => {
         var element = document.createElement('a');
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(history.join('\n').toString()));
         element.setAttribute('download', 'sql-queries.sql');
@@ -139,7 +139,7 @@ const TopBar = ({copy=true, paste= true, clear = true, download = true, save = t
             {clear && <IconButton onClick={onClear} size="md" variant="solid" color="secondary">
                 <Icon as={MdOutlineClear} label="clear" className="w-6 h-6" />
             </IconButton>}
-            {download && <IconButton onClick={onDownaload} size="md" variant="solid" color="secondary">
+            {download && <IconButton onClick={onDownload} size="md" variant="solid" color="secondary">
                 <Icon as={MdOutlineFileDownload} label="download" className="w-6 h-6" />
             </IconButton>}
             {save && <IconButton onClick={onSave}size="md" variant="solid" color="secondary">
@@ -155,4 +155,4 @@ const TopBar = ({copy=true, paste= true, clear = true, download = true, save = t
   )
 }
 
-export default TopBar
+export default React.memo(TopBar);

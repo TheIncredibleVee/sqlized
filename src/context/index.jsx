@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { useCallback, createContext, useContext, useState } from 'react';
 
 const StateContext = createContext();
 
@@ -33,7 +33,7 @@ export const ContextProvider = ({ children }) => {
   const [sorting, setSorting] = useState(localStorage.getItem('sorting') || 'true');
   const [historyPane, setHistoryPane] = useState(false);
 
-  const handleExecuteButton = (e) =>{
+  const handleExecuteButton = useCallback((e) =>{
     if(inputVal ===''){
       return;
     }
@@ -53,19 +53,19 @@ export const ContextProvider = ({ children }) => {
     }else{
       setOutput(temp);
     }
-  }
-  const saveTable = () =>{
+  },[inputVal]);
+  const saveTable = useCallback(() =>{
     e.preventDefault();
     localStorage.setItem('table', table);
-  }
-  const setMode = (mode) => {
+  },[table])
+  const setMode = useCallback((mode) => {
     localStorage.setItem('themeMode', mode);
-  };
-    const saveInputVal = () => {
+  },[currentMode]);
+    const saveInputVal = useCallback(() => {
         localStorage.setItem('inputVal', inputVal);
-    }
+    },[inputVal]);
 
-  const saveTheme = () => {
+  const saveTheme = useCallback(() => {
     if(darkThemes.indexOf(theme) > -1){
       setCurrentMode('dark'); 
       setMode('dark');
@@ -74,7 +74,7 @@ export const ContextProvider = ({ children }) => {
       setMode('light');
     }
     localStorage.setItem('theme', theme);
-  };
+  },[theme]);
 
   const handleClick = (clicked) => setSettings({ ...initialState, [clicked]: true });
 

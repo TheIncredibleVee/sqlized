@@ -1,18 +1,18 @@
-import React,{useState, useEffect} from "react";
+import React,{useCallback, useEffect} from "react";
 import {Button, Icon} from '@vechaiui/react';
 import {MdOutlineMenu} from 'react-icons/md';
 import {useStateContext} from '../../context';
 import logo from '../../assets/logo.png';
 const SideBar = () => {
     const {sidebar, setSidebar, setSettings, setHistoryPane} = useStateContext();
-    const handleSettingsClick =(e)=>{
+    const handleSettingsClick = useCallback((e)=>{
         e.preventDefault();
         setSettings(true);
-    }
-    const handleHistoryClick = (e) =>{
+    },[]);
+    const handleHistoryClick = useCallback((e) =>{
         e.preventDefault();
         setHistoryPane(true);
-    }
+    },[]);
     return (
         <>
         <div className={`flex flex-no-wrap w-full h-full ${!sidebar? 'hidden':' '}`}>
@@ -191,4 +191,4 @@ const SideBar = () => {
     );
 }
 
-export default SideBar;
+export default React.memo(SideBar);

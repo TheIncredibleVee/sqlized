@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useCallback} from 'react'
 import { Dialog, Transition, Listbox } from "@headlessui/react";
 import { cx, Button, XIcon, SelectorIcon, Icon, Link } from "@vechaiui/react";
 import {useStateContext} from '../../context';
@@ -7,9 +7,9 @@ import ToolBox from '../ToolBox';
 const HistoryPanel = () => {
   const completeButtonRef = React.useRef(null);
   const {historyPane, setHistoryPane, history} = useStateContext(); 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setHistoryPane(false);
-  }
+  },[])
 
   return (
     <div className="p-8">
@@ -73,7 +73,7 @@ const HistoryPanel = () => {
                     return (
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                          <Icon className="w-4 h-4" icon={MdOutlineCheck} />
+                          <Icon className="w-4 h-4" as={MdOutlineCheck} />
                           <span className="ml-2">{item}</span>
                         </div>
                       </div>
@@ -94,4 +94,4 @@ const HistoryPanel = () => {
   );
 }
 
-export default HistoryPanel
+export default React.memo(HistoryPanel)
