@@ -1,10 +1,15 @@
-import { useEffect } from 'react'
+import React, { useEffect, Suspense } from 'react'
 import './App.css'
 import alanBtn from '@alan-ai/alan-sdk-web';
 import { VechaiProvider, extendTheme, Button } from "@vechaiui/react";
 import {bee, midnight, pale, dawn, cool} from "./themes";
-import { ToolBox, Sidebar, Navbar, TableWrapper, Output, EditorSelect, Setting, HistoryPanel} from './components';
+import { ToolBox, Sidebar, Navbar, TableWrapper, EditorSelect,} from './components';
 import { useStateContext } from './context';
+import ClipLoader from "react-spinners/ClipLoader";
+const Output = React.lazy(()=> import ('./components/Output'));
+const Setting = React.lazy(()=>import ('./components/Setting'));
+const HistoryPanel = React.lazy(()=> import ('./components/HistoryPanel'));
+
 
 const themeSet = extendTheme({
   cursor: "pointer",
@@ -20,7 +25,7 @@ const themeSet = extendTheme({
 
 function App() {
 
-  const {sidebar, theme, inputVal, setInputVal} =useStateContext();
+  const {sidebar, theme, setInputVal} =useStateContext();
 
   useEffect(() => {
     alanBtn({
@@ -43,9 +48,13 @@ function App() {
           <div className="flex-row">
           <Navbar />
           <div className="h-14 p-2 border rounded">
-            <ToolBox/>
-          <Setting/>
-          <HistoryPanel/>
+          <ToolBox/>
+          <Suspense fallback={ClipLoader}>
+            <Setting/>
+          </Suspense>
+          <Suspense fallback={ClipLoader}>
+            <HistoryPanel/>
+          </Suspense>
           </div>
 
           </div>
