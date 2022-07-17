@@ -1,16 +1,54 @@
-import React,{useCallback} from 'react'
+import React,{useEffect, useState, useCallback} from 'react'
 import { Button, IconButton, Icon, cx, XIcon, FormControl, Divider, FormLabel,Input } from "@vechaiui/react"
 import {useStateContext} from "../../context";
 import {MdOutlineContentCopy, MdOutlineContentPaste, MdOutlineClear, MdOutlineFileDownload, MdOutlineSave, MdOutlineUploadFile,MdOutlinePlayCircleOutline} from 'react-icons/md'
 import { Dialog, Transition } from "@headlessui/react";
-const TopBar = ({copy=true, paste= true, clear = true, download = true, save = true, upload = true, execute = true}) => {
+
+var myHeaders = new Headers();
+myHeaders.append("Ocp-Apim-Subscription-Key", "48bf910e696d4c7aa84dd9d13f02466f");
+myHeaders.append("Content-Type", "application/ssml+xml");
+myHeaders.append("X-Microsoft-OutputFormat", "audio-16khz-128kbitrate-mono-mp3");
+
+
+
+
+
+const TopBar = ({copy=true, paste= true, clear = true, download = true, save = true, upload = true, execute = true, listen= true}) => {
+    const {inputVal, setInputVal, saveInputVal, handleExecuteButton, history} = useStateContext();
+
     const [showDialog, setShowDialog] = React.useState(false);
     const inputRef = React.useRef(null);
-
+    const [audio, setAudio] = useState(new Audio('https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'));
+    const [playing, setPlaying] = useState(false);
+    
+    const onListen = () => {
+      var raw = `<speak version='1.0' xml:lang='en-US'>\r\n    <voice xml:lang='en-US' xml:gender='Female' name='en-US-JennyNeural'>\r\n        ${inputVal}\r\n    </voice>\r\n</speak>`;
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+      fetch("https://eastus.tts.speech.microsoft.com/cognitiveservices/v1", requestOptions)
+        .then(res =>{var reader = res.body.getReader();
+            return reader
+              .read()
+              .then((result) => {
+                return result;
+              });
+          }).then(response => {
+              var blob = new Blob([response.value], { type: 'audio/mp3' });
+              var url = window.URL.createObjectURL(blob)
+              window.tempAudio = new Audio();
+              window.tempAudio.src = url;
+              setAudio(tempAudio);
+              setPlaying(!playing);
+          }).then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
     const handleOpen = useCallback(() => setShowDialog(true), []);
     const handleClose = useCallback(() => setShowDialog(false),[]);
 
-    const {inputVal, setInputVal, saveInputVal, handleExecuteButton, history} = useStateContext();
     const onCopy = useCallback(() => {
         navigator.clipboard.writeText(inputVal);
     }, [inputVal]);
@@ -36,6 +74,19 @@ const TopBar = ({copy=true, paste= true, clear = true, download = true, save = t
       
         document.body.removeChild(element);
     }
+
+    useEffect(() => {
+        if(playing){
+          audio.addEventListener('ended', () => {console.log("ENDED"); setPlaying(false)});
+          audio.play();
+           
+        }else{
+          audio.pause();
+        } 
+          
+      },
+      [playing]
+    );
   return (
     <>
     <Transition show={showDialog} as={React.Fragment}>
@@ -148,7 +199,10 @@ const TopBar = ({copy=true, paste= true, clear = true, download = true, save = t
             {upload && <IconButton onClick={handleOpen} size="md" variant="solid" color="secondary">
                 <Icon as={MdOutlineUploadFile} label="upload" className="w-6 h-6" />
             </IconButton>}
-            {execute && <Button onClick={handleExecuteButton} color="primary" variant="solid" leftIcon={<Icon as={MdOutlinePlayCircleOutline} label="gift" className="w-6 h-6 mr-1" />}>Execute</Button>    }
+             {listen && <IconButton onClick={onListen} size="md" variant="solid" color="secondary" disabled={playing}>
+                <Icon as={MdOutlinePlayCircleOutline} label="listen" className="w-6 h-6" />
+            </IconButton>}
+            {execute && <Button onClick={handleExecuteButton} color="primary" variant="solid" leftIcon={<Icon as={MdOutlinePlayCircleOutline} label="gift" className="w-6 h-6 mr-1" />}>Execute</Button>}
         </div>
     </>
     
