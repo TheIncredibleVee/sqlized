@@ -61,7 +61,7 @@ const HistoryPanel = () => {
                 <Link className="pr-4 text-sm">
                   Download
                 </Link>
-                <ToolBox upload={false} clear = {false} copy={false} execute={false} paste = {false} save={false}/>
+                <ToolBox upload={false} clear = {false} copy={false} execute={false} paste = {false} save={false} listen= {false}/>
 
                 </div>
 
