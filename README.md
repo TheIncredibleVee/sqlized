@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <img src="./assets/logo.png" alt="downshift logo" title="downshift logo" width="300">
   <br>
@@ -18,12 +17,11 @@ The app offer a react UI-UX experience coupled with a bunch of cool and exiting 
 - [Table Options](#table-options) for sorting, editing and pagination of rows to better understand the data.
 - [Multiple Themes](#theming) for rich and worthy user experience
 
-
 ### SQLized
 
 This is a app that takes in SQL queries fro the user and executes the commands and return display's the output in a well formatted tables.
 
-> NOTE: The original use case of this app is to execute SQL queries, however this is also 
+> NOTE: The original use case of this app is to execute SQL queries, however this is also
 > powerful and flexible enough to work on tables alone, edit Records and much more.
 
 ## Table of Contents
@@ -35,13 +33,13 @@ This is a app that takes in SQL queries fro the user and executes the commands a
 - [Installation](#installation)
 - [Usage](#usage)
 - [Demo](#demo)
-- [Feature](#features) 
-    - [Multiple Editors](#multiple-editors)
-    - [View History](#view-history)
-    - [Table Options](#table-options)
-    - [Voice Recognition](#voice-recognition)
-    - [ToolBox Options(Cut, Copy, Clear, Upload, Download)](#toolbox-options)
-    - [Theming](#theming)
+- [Feature](#features)
+  - [Multiple Editors](#multiple-editors)
+  - [View History](#view-history)
+  - [Table Options](#table-options)
+  - [Voice Recognition](#voice-recognition)
+  - [ToolBox Options(Cut, Copy, Clear, Upload, Download, Read Out Loud)](#toolbox-options)
+  - [Theming](#theming)
 - [Tech Stack](#tech-stack)
 - [Packages and Libraries](#packages-and-libraries)
 - [Speed](#speed)
@@ -63,6 +61,7 @@ yarn
 ## Usage
 
 Try out the app which is available to try using the link mentioned below:(Deployed using [Vercel][vercel] )
+
 > [Try it out in the browser][deployment-link]
 
 > Warning: For best User Experience, visit the website on `Desktop`.
@@ -72,7 +71,6 @@ Try out the app which is available to try using the link mentioned below:(Deploy
 Below is a Gif demonstracting the app and it's various features that are available for the users to try out.
 
 <img src="./Screenshots/rec.gif">
-
 
 ## Features
 
@@ -100,7 +98,7 @@ Below is a screenshot of the editor.
 
 #### Guided Editor
 
-This is a custom made editor just for the most basic user and beginners who have hard time remembering the syntax and have to keep looking at tha manual time after time. Using this user won't have to switch between the the docs and the site. They can just focus on the understand the concpets and implementing the SQL queries without woring about refering the docs again and again. 
+This is a custom made editor just for the most basic user and beginners who have hard time remembering the syntax and have to keep looking at tha manual time after time. Using this user won't have to switch between the the docs and the site. They can just focus on the understand the concpets and implementing the SQL queries without woring about refering the docs again and again.
 
 Below is a screenshot of the editor.
 
@@ -123,7 +121,7 @@ Below is a screenshot of the editor.
 
 <img src="./Screenshots/static/view-history.png"/>
 
-### Table Options 
+### Table Options
 
 In order to better understand the data stored in form of tables, there are a few optinos provided to the user in terms of Tables. These are
 
@@ -145,19 +143,20 @@ This is by far one of the most basic and useful feature that is missing in most 
 - Upload
 - Download
 - Execute
+- Read out loud (using Azure Speech Services)
 
 ### Theming
 
 Themes help to enhance the overall UI-UX of an app and make it more attractive and hence bringing more user base to try out the app.
 
 - [Light][vechai-theme]
-    - [Light][vechai-theme]
-    - [Bee][vechai-theme]
+  - [Light][vechai-theme]
+  - [Bee][vechai-theme]
 - [Dark][vechai-theme]
-    - [Dawn][vechai-theme]
-    - [Midnight][vechai-theme]
-    - [Cool][vechai-theme]
-    - [pale][vechai-theme]
+  - [Dawn][vechai-theme]
+  - [Midnight][vechai-theme]
+  - [Cool][vechai-theme]
+  - [pale][vechai-theme]
 
 Below is a dropdown for choosing the desired theme.
 
@@ -195,7 +194,7 @@ Used for the purpose of providing beautiful UI components and Icons.
 
 ### [React Maker][react-autocorrect-input] - `1.0.2`
 
-Used for provideding input field that has custom auto complete dropdown. 
+Used for provideding input field that has custom auto complete dropdown.
 
 ### [TailWind CSS][tailwind] - `3.1.3`
 
@@ -231,16 +230,13 @@ Give the fact that the app has [Alan AI Voice Recognition][alan-ai] and [AG Grid
 
 Used useMemo and useCallback hooks for memorization puropse in a lot of places. Moreover, choose Vite over webpack also grave a much needed boost to the final speed of the app. Using gobal variables only when necessary. Will be doing more optimizations like re-reselect, lazy Loading plus using cache memory proficiently.
 
-
 ## Future Scope
 
 In addition to improving the alreay implemented features, am also looking forwards towards adding the backend, creating a dashboard for the user and adding plans based on which they can make limited calls per day, adding visualization for the tables, plus adding login and signup routes as well. Not to forget to mention to make the app more responsive that it currently is.
 
-
 ## [Contributors](#contributors)
 
 [TheIncredibleVee][theincrediblevee]
-
 
 ## Contributors
 
