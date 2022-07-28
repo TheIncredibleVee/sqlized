@@ -173,7 +173,7 @@ This app is primarily based on [React][create-react-app] while build with [Vite]
 
 ## Azure Technologies used
 
-This app is primarily based on [React][create-react-app] while build with [Vite][vite] and is using two most popular Azure core technologies out there which are mnentioned about in detail. These technologies were added to enhance the user experience and add more usability into the webapp. 
+This app is primarily based on [React][create-react-app] while build with [Vite][vite] and is using two most popular Azure core technologies out there which are mnentioned about in detail. These technologies were added to enhance the user experience and add more usability into the webapp. To view the deployment steps, view the [DEPLOY_DOC.md]("./DEPLOY_DOC.md")
 
 The technologies used are as follows:
 
@@ -191,6 +191,8 @@ For more information read the documentation of [Azure Speech Services](azure-spe
 ### Static Web Apps
 
 The main purpose behind using Static Web Apps was to deploy the web app onto the internet so that anyone can access it. Apart from just deployment, Azure Static Web App also provides the ability of adding CI/CD (Continuous Integration/ Continuous Deployment). There is a [.yml file](.github/workflows/azure-static-web-apps-brave-pond-04e075210.yml) that is added to the path .github/workflows that helps us achieve the result. So, when there is a commit made on the main branch or a PR is merged on the main branch, the GitHub actions runs the script and deploys the app automatically. In case of any failures or warnings, anyone can view the log by clicking on the Actions tab.
+
+<img src="./Screenshots/static/web-app.png">
 
 For more information read the documentation of [Azure Web Apps](azure-static-web-apps-doc)
 
