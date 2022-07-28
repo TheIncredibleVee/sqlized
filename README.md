@@ -173,7 +173,7 @@ This app is primarily based on [React][create-react-app] while build with [Vite]
 
 ## Azure Technologies used
 
-This app is primarily based on [React][create-react-app] while build with [Vite][vite] and is using two most popular Azure core technologies out there which are mentioned about in detail below. These technologies were added to enhance the user experience and add more usability into the webapp. To view the deployment steps, view the [DEPLOY_DOC.md](./DEPLOY_DOC.md)
+This app is primarily based on [React][create-react-app] while build with [Vite][vite] and is using two most popular Azure core technologies out there which are mentioned in detail below. These technologies were added to enhance the user experience and add more usability into the webapp. To view the deployment steps, view the [DEPLOY_DOC.md](./DEPLOY_DOC.md)
 
 The technologies used are as follows:
 
