@@ -94,3 +94,19 @@ Link of deployment App will be there in the Resource as well as the GitHub repos
 <img src="./Screenshots/static/Azure/static_apps_2.png">
 
 
+## Bonus Content
+
+### DDos Protection
+
+* Sign in to the [Azure Dashboard](https://portal.azure.com)
+* Search DDos Protection and press enter
+* Click on create button
+* Select the Resource Group(sqlized)
+* Give it a name(sqlized-ddos)
+* Press Review + Create and then create
+
+<img src="./Screenshots/static/Azure/sqlized-ddos.png">
+
+
+
+

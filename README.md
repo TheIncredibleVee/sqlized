@@ -42,8 +42,8 @@ This is a app that takes in SQL queries fro the user and executes the commands a
   - [Theming](#theming)
 - [Tech Stack](#tech-stack)
 - [Azure Technologies used](#azure-technologies-used)
-  - [Speech Services]
-  - [Static Web App]
+  - [Speech Services](#speech-services)
+  - [Static Web App](#static-web-apps)
 - [Packages and Libraries](#packages-and-libraries)
 - [Speed](#speed)
 - [Optimizations](#optimizations)
