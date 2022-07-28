@@ -89,8 +89,8 @@ Deployment will take sometime depending on the App size and location.
 You can check the process by clicking on the Actions tab on the GitHub Repository and change any config via the .yml file in .github/workflows folder.
 Link of deployment App will be there in the Resource as well as the GitHub repository
 
-<img src="./ScreenShots/static/Azure/static_apps_1.png">
+<img src="./Screenshots/static/Azure/static_apps_1.png">
 
-<img src="./ScreenShots/static/Azure/static_apps_2.png">
+<img src="./Screenshots/static/Azure/static_apps_2.png">
 
 
