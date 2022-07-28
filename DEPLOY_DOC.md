@@ -40,7 +40,7 @@ Here I used postman for testing
 * Set the following parameters:
     METHOD:     POST
 
-    URL:    https://<Region>.tts.speech.microsoft.com/cognitiveservices/v1
+    URL:    https://`<Region>`.tts.speech.microsoft.com/cognitiveservices/v1
     >In our case the url is https://eastus.tts.speech.microsoft.com/cognitiveservices/v1
 
     HEADERS:    
