@@ -41,6 +41,9 @@ This is a app that takes in SQL queries fro the user and executes the commands a
   - [ToolBox Options(Cut, Copy, Clear, Upload, Download, Read Out Loud)](#toolbox-options)
   - [Theming](#theming)
 - [Tech Stack](#tech-stack)
+- [Azure Technologies used](#azure-technologies-used)
+  - [Speech Services]
+  - [Static Web App]
 - [Packages and Libraries](#packages-and-libraries)
 - [Speed](#speed)
 - [Optimizations](#optimizations)
@@ -168,6 +171,29 @@ This app is primarily based on [React][create-react-app] while build with [Vite]
 
 > Node version used - `14.0.0`
 
+## Azure Technologies used
+
+This app is primarily based on [React][create-react-app] while build with [Vite][vite] and is using two most popular Azure core technologies out there which are mnentioned about in detail. These technologies were added to enhance the user experience and add more usability into the webapp. 
+
+The technologies used are as follows:
+
+### Speech Services
+
+The main purpose behind using Speech service was to make the user hear out the input they have typed or copied. In case of small input of about 1-2 lines, this might not seem useful. But, this feature was added keeping in mind that there is another feature wehere in user can [upload](#toolbox-optionscut-copy-clear-upload-download-paste-execute) files as an input that might contain a lot of code, and the user can just hear the input while working on something in background or say while having dinner.
+
+<img src="./Screenshots/static/speech.png">
+
+The way this feature is implemented is that I've used the REST API provided by Azure Speech Services and it return an audio file which have been parsed as blob and then converted to a new Audio() object so that it can be played in the browser as soon as someone clicks that read Listen button on the tool box.
+
+For more information read the documentation of [Azure Speech Services](azure-speech-doc)
+
+
+### Static Web Apps
+
+The main purpose behind using Static Web Apps was to deploy the web app onto the internet so that anyone can access it. Apart from just deployment, Azure Static Web App also provides the ability of adding CI/CD (Continuous Integration/ Continuous Deployment). There is a [.yml file](.github/workflows/azure-static-web-apps-brave-pond-04e075210.yml) that is added to the path .github/workflows that helps us achieve the result. So, when there is a commit made on the main branch or a PR is merged on the main branch, the GitHub actions runs the script and deploys the app automatically. In case of any failures or warnings, anyone can view the log by clicking on the Actions tab.
+
+For more information read the documentation of [Azure Web Apps](azure-static-web-apps-doc)
+
 ## Packages and libraries Used
 
 Below is a list of all the Packages and libraries used for making the app.
@@ -271,7 +297,7 @@ MIT
 [code-mirror]: https://www.npmjs.com/package/react-codemirror
 [headless-ui]: https://headlessui.dev/
 [hero-icons]: https://www.npmjs.com/package/@heroicons/react
-[deployment-link]: https://sqlized.vercel.app/
+[deployment-link]: https://brave-pond-04e075210.1.azurestaticapps.net/
 [react-autocorrect-input]: https://www.npmjs.com/package/@webscopeio/react-textarea-autocomplete
 [tailwind]: https://tailwindcss.com/docs/guides/create-react-app
 [vechai-ui]: https://www.vechaiui.com/
@@ -283,3 +309,5 @@ MIT
 [sorting]: https://www.ag-grid.com/react-data-grid/row-sorting/
 [vechai-theme]: https://www.vechaiui.com/themes-gallery
 [theincrediblevee]: https://www.github.com/theincrediblevee
+[azure-static-web-apps-doc]: https://azure.microsoft.com/en-us/services/app-service/static/
+[azure-speech-doc]: https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/
