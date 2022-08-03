@@ -309,7 +309,7 @@ MIT
 [pagination]: https://www.ag-grid.com/react-data-grid/server-side-model-pagination/
 [edit-table-cells]: https://www.ag-grid.com/react-data-grid/cell-editing/
 [sorting]: https://www.ag-grid.com/react-data-grid/row-sorting/
-[vechai-theme]: https://www.vechaiui.com/themes-gallery
+[vechai-theme]: https://www.vechaiui.com/themes-gallery/
 [theincrediblevee]: https://www.github.com/theincrediblevee
 [azure-static-web-apps-doc]: https://azure.microsoft.com/en-us/services/app-service/static/
 [azure-speech-doc]: https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/
