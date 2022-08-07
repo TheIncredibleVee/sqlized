@@ -6,7 +6,7 @@ import {FaAssistiveListeningSystems} from 'react-icons/fa';
 import { Dialog, Transition } from "@headlessui/react";
 
 var myHeaders = new Headers();
-myHeaders.append("Ocp-Apim-Subscription-Key", "48bf910e696d4c7aa84dd9d13f02466f");
+myHeaders.append("Ocp-Apim-Subscription-Key", "7bb4ff1555c3497c9b8b231a6f2c74ad");
 myHeaders.append("Content-Type", "application/ssml+xml");
 myHeaders.append("X-Microsoft-OutputFormat", "audio-16khz-128kbitrate-mono-mp3");
 
