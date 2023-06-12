@@ -299,7 +299,7 @@ MIT
 [code-mirror]: https://www.npmjs.com/package/react-codemirror
 [headless-ui]: https://headlessui.dev/
 [hero-icons]: https://www.npmjs.com/package/@heroicons/react
-[deployment-link]: https://brave-pond-04e075210.1.azurestaticapps.net/
+[deployment-link]: https://sqlized.vercel.app/
 [react-autocorrect-input]: https://www.npmjs.com/package/@webscopeio/react-textarea-autocomplete
 [tailwind]: https://tailwindcss.com/docs/guides/create-react-app
 [vechai-ui]: https://www.vechaiui.com/
